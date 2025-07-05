@@ -1,0 +1,15 @@
+{
+  // "eslint.useFlatConfig": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+  },
+  "extensions": [
+		"vue.volar",
+    "editorconfig.edit",
+    "eamodio.gitlens",
+    "dbaeumer.vscode-eslint",
+    "ms-vscode-remote.remote-containers"
+	]
+}
