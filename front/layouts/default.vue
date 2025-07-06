@@ -1,7 +1,8 @@
 <template>
   <VApp>
     <NuxtLoadingIndicator />
-    <AppHeader />
+    <AppHeader @toggle-drawer="handleNavigationState" />
+    <AppNavigation v-model="drawer" />
     <VMain>
       <VContainer>
         <slot />
@@ -10,3 +11,11 @@
     <AppFooter />
   </VApp>
 </template>
+
+<script setup lang="ts">
+const handleNavigationState = () => {
+  drawer.value = !drawer.value
+}
+
+const drawer = ref(false)
+</script>

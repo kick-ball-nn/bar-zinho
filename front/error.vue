@@ -1,19 +1,37 @@
 <template>
   <v-row justify="center">
-    <v-col cols="12" md="8" lg="6">
-      <v-card flat color="transparent">
+    <v-col
+      cols="12"
+      md="8"
+      lg="6"
+    >
+      <v-card
+        flat
+        color="transparent"
+      >
         <v-card-text>
-          <div class="text-h3 font-weight-bold mb-4" :color="primaryColor">
+          <div
+            class="text-h3 font-weight-bold mb-4"
+            :color="primaryColor"
+          >
             Coming Soon!
           </div>
           <div class="text-h5 mb-6">
             新しいWebサイトを準備中です。
           </div>
 
-          <v-icon size="100" :color="primaryColor" class="mb-4">
+          <v-icon
+            size="100"
+            :color="primaryColor"
+            class="mb-4"
+          >
             mdi-cat
           </v-icon>
-          <v-icon size="100" :color="accentColor" class="mb-4 ml-6">
+          <v-icon
+            size="100"
+            :color="accentColor"
+            class="mb-4 ml-6"
+          >
             mdi-wine-glass
           </v-icon>
 
@@ -32,24 +50,40 @@
             rounded
             height="6"
             class="mb-6"
-          ></v-progress-linear>
+          />
 
           <p class="text-body-2 text-grey-darken-1">
             一時的にご迷惑をおかけいたしますが、何卒ご理解いただけますようお願い申し上げます。<br>
             最新情報はInstagramをご確認ください。
           </p>
 
-          <v-btn
-            :color="primaryColor"
-            href="https://www.instagram.com/bar.zinho/"
-            target="_blank"
-            rel="noopener noreferrer"
-            large
-            class="mt-4"
-          >
-            <v-icon left>mdi-instagram</v-icon>
-            Instagram
-          </v-btn>
+          <div class="d-flex ga-3">
+            <v-btn
+              :color="primaryColor"
+              rel="noopener noreferrer"
+              large
+              class="mt-4"
+              @click="handleError"
+            >
+              <v-icon left>
+                mdi-home
+              </v-icon>
+              HOME
+            </v-btn>
+            <v-btn
+              :color="primaryColor"
+              href="https://www.instagram.com/bar.zinho/"
+              target="_blank"
+              rel="noopener noreferrer"
+              large
+              class="mt-4"
+            >
+              <v-icon left>
+                mdi-instagram
+              </v-icon>
+              Instagram
+            </v-btn>
+          </div>
         </v-card-text>
       </v-card>
     </v-col>
@@ -59,14 +93,13 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
 
-const props = defineProps({
-  error: Object as () => NuxtError
+defineProps({
+  error: Object as () => NuxtError,
 })
-
 const handleError = () => clearError({ redirect: '/' })
 
 const primaryColor = 'red-darken-3' // 赤い看板をイメージした色 (Deep Red)
-const accentColor = '#FFB300'  // ワインや温かみをイメージした色 (Amber)
+const accentColor = '#FFB300' // ワインや温かみをイメージした色 (Amber)
 </script>
 
 <style scoped>
